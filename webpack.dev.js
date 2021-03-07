@@ -1,25 +1,33 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require("path")
+const webpack = require("webpack")
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-    mode: "development",
-    devtool: "source-map",
-    entry: './src/client/index.js',
-    devtool: 'source-map',
-    module: {
-        rules: [
-            {
-                test: '/\.js$/',
-                exclude: /node_modules/,
-                loader: "babel-loader"
-            }
-        ]
-    },
-    plugins: [
-        new HtmlWebPackPlugin({
-            template: "./src/client/views/index.html",
-            filename: "./index.html",
-        })
+  mode: "development",
+  devtool: "source-map",
+  entry: "./src/client/index.js",
+  output: {
+    libraryTarget: "var",
+    library: "Client"
+  },
+  devtool: "source-map",
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      }
     ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/client/views/index.html",
+      filename: "./index.html"
+    })
+  ]
 }
