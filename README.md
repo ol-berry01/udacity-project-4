@@ -34,3 +34,25 @@ npm -v
 ```
 npm install
 ```
+
+2. Signup with [meaningcloud API](https://www.meaningcloud.com/products/sentiment-analysis) and get a key for the Sentiment Analysis API
+
+3. Create a new file in the root of the project called `.env` and add the following replacing the \* with your unique API key
+
+```
+API_KEY=**************************
+```
+
+4. Build the project
+
+```
+npm run build-prod
+```
+
+5. Start the project server
+
+```
+npm run start
+```
+
+6. View the project at the following address `http://localhost:8081/`

@@ -2,6 +2,10 @@ var path = require("path")
 const express = require("express")
 const mockAPIResponse = require("./mockAPI.js")
 
+// meaningcloud api
+const dotenv = require("dotenv")
+dotenv.config()
+
 const app = express()
 
 app.use(express.static("dist"))
@@ -11,6 +15,9 @@ console.log(__dirname)
 app.get("/", function (req, res) {
   res.sendFile("dist/index.html")
 })
+
+// test env connection
+console.log(`Your API key is ${process.env.API_KEY}`)
 
 const port = 8081
 
