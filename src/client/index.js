@@ -4,7 +4,8 @@ import "./styles/footer.scss"
 import "./styles/form.scss"
 import "./styles/header.scss"
 
-import { checkForName } from "./js/nameChecker"
+// import { checkForName } from "./js/nameChecker"
+import { urlValid } from "./js/urlValid"
 import { handleSubmit } from "./js/formHandler"
 
 // console.log(checkForName)
@@ -12,4 +13,4 @@ import { handleSubmit } from "./js/formHandler"
 // alert("I EXIST")
 // console.log("CHANGE!!")
 
-export { checkForName, handleSubmit }
+export { urlValid, handleSubmit }

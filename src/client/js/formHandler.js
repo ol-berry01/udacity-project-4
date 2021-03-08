@@ -1,16 +1,15 @@
 function handleSubmit(event) {
   event.preventDefault()
 
-  // check what text was put into the form field
   let formText = document.getElementById("name").value
-  Client.checkForName(formText)
 
-  console.log("::: Form Submitted :::")
-  fetch("http://localhost:8081/test")
-    .then(res => res.json())
-    .then(function (res) {
-      document.getElementById("results").innerHTML = res.message
-    })
+  return Client.urlValid(formText)
+    ? postData("http://localhost:8081/api", { url: formText }).then(res => {
+        console.log("Form text submitted")
+      })
+    : alert("URL invalid, please submit a valid link")
 }
+
+const postData = async (url = "", article = {}) => {}
 
 export { handleSubmit }

@@ -1,11 +1,13 @@
 var path = require("path")
 const express = require("express")
 const bodyParser = require("body-parser")
-const mockAPIResponse = require("./mockAPI.js")
 
 // meaningcloud api
 const dotenv = require("dotenv")
 dotenv.config()
+const mcURL = process.env.BASE_URL
+const mcAPI = process.env.API_KEY
+console.log(`The API url is ${mcURL} and uses key ${mcAPI}`)
 
 // use express
 const app = express()
@@ -23,21 +25,14 @@ app.get("/", (req, res) => {
   res.sendFile("dist/index.html")
 })
 
-// get route setup
-app.get("/test", (req, res) => {
-  res.send(mockAPIResponse)
+// post route setup
+app.post("/api", async function (req, res) {
+  userInput = req.body.url
 })
-
-// test env connection
-console.log(`Your API key is ${process.env.API_KEY}`)
 
 const port = 8081
 
 // designates what port the app will listen to for incoming requests
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
-})
-
-app.get("/test", (req, res) => {
-  res.send(mockAPIResponse)
 })
