@@ -13,7 +13,7 @@ function handleSubmit(event) {
     ? postData("http://localhost:8081/api", { url: formText }).then(res => {
         console.log("Form text submitted")
 
-        score.innerText = res.score_tag
+        score.innerText = Client.scoreChecker(res.score_tag)
         agreement.innerText = res.agreement
         subjectivity.innerText = res.subjectivity
         confidence.innerText = res.subjectivity

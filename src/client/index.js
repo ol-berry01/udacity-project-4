@@ -6,6 +6,7 @@ import "./styles/header.scss"
 
 // import { checkForName } from "./js/nameChecker"
 import { urlValid } from "./js/urlValid"
+import { scoreChecker } from "./js/scoreChecker"
 import { handleSubmit } from "./js/formHandler"
 
 // console.log(checkForName)
@@ -13,4 +14,4 @@ import { handleSubmit } from "./js/formHandler"
 // alert("I EXIST")
 // console.log("CHANGE!!")
 
-export { urlValid, handleSubmit }
+export { urlValid, scoreChecker, handleSubmit }
