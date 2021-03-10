@@ -20,13 +20,19 @@
       <section>
         <form class="" onsubmit="return handleSubmit(event)">
           <input id="name" type="text" name="input" value="" placeholder="Url to analyse" />
-          <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" />
+          <input type="submit" name="" value="Review" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" />
         </form>
       </section>
 
       <section>
-        <strong>Form Results:</strong>
-        <div id="results"></div>
+        <strong>Submitted Article Results:</strong>
+        <div id="results">
+          <p class="score">Score: <span></span></p>
+          <p class="agreement">Agreement: <span></span></p>
+          <p class="subjectivity">Subjectivity: <span></span></p>
+          <p class="confidence">Confidence: <span></span></p>
+          <p class="irony">Irony: <span></span></p>
+        </div>
       </section>
     </main>
 
