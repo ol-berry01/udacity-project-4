@@ -1,6 +1,7 @@
 var path = require("path")
 const express = require("express")
 const bodyParser = require("body-parser")
+const fetch = require("node-fetch")
 
 // meaningcloud api
 const dotenv = require("dotenv")
@@ -8,6 +9,7 @@ dotenv.config()
 const mcURL = process.env.BASE_URL
 const mcAPI = process.env.API_KEY
 console.log(`The API url is ${mcURL} and uses key ${mcAPI}`)
+let userInput = []
 
 // use express
 const app = express()
@@ -28,6 +30,12 @@ app.get("/", (req, res) => {
 // post route setup
 app.post("/api", async function (req, res) {
   userInput = req.body.url
+  const mcQuery = `${mcURL}key=${mcAPI}&url=${userInput}&lang=en`
+
+  const response = await fetch(mcQuery)
+  const mcData = await response.json()
+  console.log(mcData)
+  res.send(mcData)
 })
 
 const port = 8081
