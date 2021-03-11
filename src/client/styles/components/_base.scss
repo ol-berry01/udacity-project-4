@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "form"
+    "results";
+  grid-template-rows: 50% 50%;
+  height: calc(100vh - 160px);
+
+  @media (min-width: 1024px) {
+    height: calc(100vh - 140px);
+    grid-template-areas: "form results";
+    grid-template-rows: 100%;
+  }
+}
+
+section {
+  width: 100%;
+  flex: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1280px) {
+    width: 50%;
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .form {
+    background-size: cover;
+    height: 100%;
+
+    @media (min-width: 768px) {
+    }
+
+    @media (min-width: 1280px) {
+      width: 50%;
+      flex: 1;
+    }
+  }
+
+  .results {
+    width: 80%;
+    text-align: left;
+
+    &-header {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $secondary;
+
+      strong {
+        color: $primary;
+        font-size: 20px;
+      }
+    }
+
+    &-output {
+      margin: 10px 0;
+
+      p {
+        padding: 10px 0;
+      }
+    }
+  }
+}

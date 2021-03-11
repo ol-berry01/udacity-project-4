@@ -1,0 +1,26 @@
+header {
+  background: $primary;
+  color: $background;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    ul li a {
+      color: $background;
+      text-decoration: none;
+
+      :hover {
+        opacity: 0.7;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+footer {
+  background: $secondary;
+  color: $background;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  p {
+    line-height: 20px;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+form {
+  background: rgba(255, 255, 255, 0.5);
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #545454;
+  border-radius: 3px;
+
+  @media (min-width: 1280px) {
+    width: 80%;
+    padding: 40px;
+  }
+}
+
+input {
+  padding: 5px 20px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+}
