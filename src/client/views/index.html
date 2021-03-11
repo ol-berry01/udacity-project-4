@@ -44,5 +44,14 @@
       <p>Sentiment Anaylser by Oliver Berry</p>
       <p>Utilising the <a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Meaning Cloud API</a> | Background photo by <a href="https://unsplash.com/@kvncnls?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kevin Canlas</a> on <a href="/s/photos/javascript?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
     </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js")
+        })
+      }
+    </script>
   </body>
 </html>
